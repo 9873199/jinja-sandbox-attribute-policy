@@ -1,0 +1,178 @@
+{
+  "created": "2026-11-14T12:18:56+08:00",
+  "reviewed": true,
+  "reviewer": "Codex primary reviewer, AI-assisted",
+  "uid": 1738,
+  "frozen_commit": "f7886fee45613b3214eda6fb1c05c96eb9827e35",
+  "native_trajectory_sha256": "708d7bd3deabf8a6b5afcec857d138cedf27b55ec0a98cfef32e061c3ed8c828",
+  "files": [
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\repairs-126-1730-1743-and-seven-20261114-r1\\seven\\evaluation\\uf-20261112-sec-attribute-policy\\freeze.json",
+      "path": "freeze.json",
+      "sha256": "25e55b6327acfa50f7bf59e9f78d32d7dadb681609211f43c2f35ea31a7dffbe"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\repairs-126-1730-1743-and-seven-20261114-r1\\seven\\evaluation\\uf-20261112-sec-attribute-policy\\freeze-audit.json",
+      "path": "freeze-audit.json",
+      "sha256": "04a96221760c7be8bf619f91e218f7ab0d6d52da2d18cc53f836aecdedbefe9d"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\repairs-126-1730-1743-and-seven-20261114-r1\\seven\\evaluation\\uf-20261112-sec-attribute-policy\\environment-reviewed.json",
+      "path": "environment-reviewed.json",
+      "sha256": "22e05ad5f70673bc8c422d5de3c8c9e053a92c1fa9bf0fada926c7fc98b444ba"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\repairs-126-1730-1743-and-seven-20261114-r1\\seven\\evaluation\\uf-20261112-sec-attribute-policy\\evidence-map.json",
+      "path": "evidence-map.json",
+      "sha256": "d074dd3dc96fdd2c1dc9f4905cf9b5cf9279bbc60982a9e753af85dcf17e607c"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\repairs-126-1730-1743-and-seven-20261114-r1\\seven\\evaluation\\uf-20261112-sec-attribute-policy\\model-final-answer.txt",
+      "path": "model-final-answer.txt",
+      "sha256": "d6798b574bf771e8bbf574113467b9cc0e19d9c3112e3da822c2255ae4c2106b"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\repairs-126-1730-1743-and-seven-20261114-r1\\seven\\evaluation\\uf-20261112-sec-attribute-policy\\test-results.json",
+      "path": "test-results.json",
+      "sha256": "2ba8b4aa046d6e17efc461c9afe6a0611b8ce21b2484268158f5dfd1be8da4eb"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\repairs-126-1730-1743-and-seven-20261114-r1\\seven\\evaluation\\uf-20261112-sec-attribute-policy\\evaluation-qc.json",
+      "path": "evaluation-qc.json",
+      "sha256": "2d2d82b594c59e967e797572dffb073ca0569ef9072111e7ad61153f315c4508"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\repairs-126-1730-1743-and-seven-20261114-r1\\seven\\evaluation\\uf-20261112-sec-attribute-policy\\verification\\acceptance-r1\\actual-import.json",
+      "path": "verification/acceptance-r1/actual-import.json",
+      "sha256": "b6cf2967f09e4dbc01eb81236828687f00ac7e424029ffeb9d3f30004b509d24"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\repairs-126-1730-1743-and-seven-20261114-r1\\seven\\evaluation\\uf-20261112-sec-attribute-policy\\verification\\acceptance-r1\\actual-import.stderr.log",
+      "path": "verification/acceptance-r1/actual-import.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\repairs-126-1730-1743-and-seven-20261114-r1\\seven\\evaluation\\uf-20261112-sec-attribute-policy\\verification\\acceptance-r1\\actual-import.stdout.log",
+      "path": "verification/acceptance-r1/actual-import.stdout.log",
+      "sha256": "522109e81df265c5a53de5f10811c2c5b70a8ab7c197c2856a573c7191456d93"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\repairs-126-1730-1743-and-seven-20261114-r1\\seven\\evaluation\\uf-20261112-sec-attribute-policy\\verification\\acceptance-r1\\dependency-lock.json",
+      "path": "verification/acceptance-r1/dependency-lock.json",
+      "sha256": "f288b2b0f078d8994691272b125717fc2addc7607353c516768a03f7e8d2ce88"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\repairs-126-1730-1743-and-seven-20261114-r1\\seven\\evaluation\\uf-20261112-sec-attribute-policy\\verification\\acceptance-r1\\dependency-lock.stderr.log",
+      "path": "verification/acceptance-r1/dependency-lock.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\repairs-126-1730-1743-and-seven-20261114-r1\\seven\\evaluation\\uf-20261112-sec-attribute-policy\\verification\\acceptance-r1\\dependency-lock.stdout.log",
+      "path": "verification/acceptance-r1/dependency-lock.stdout.log",
+      "sha256": "7a13ee9fabe087f4b4bef72f322475ad14ac9eb408da6be43bfa4cbb8c99d77b"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\repairs-126-1730-1743-and-seven-20261114-r1\\seven\\evaluation\\uf-20261112-sec-attribute-policy\\verification\\acceptance-r1\\independent-acceptance.json",
+      "path": "verification/acceptance-r1/independent-acceptance.json",
+      "sha256": "f7d5db3f75511d9bfb4efc316079b6882ec9dcf0a0b0dbb13ebbe344276843d3"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\repairs-126-1730-1743-and-seven-20261114-r1\\seven\\evaluation\\uf-20261112-sec-attribute-policy\\verification\\acceptance-r1\\independent-acceptance.stderr.log",
+      "path": "verification/acceptance-r1/independent-acceptance.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\repairs-126-1730-1743-and-seven-20261114-r1\\seven\\evaluation\\uf-20261112-sec-attribute-policy\\verification\\acceptance-r1\\independent-acceptance.stdout.log",
+      "path": "verification/acceptance-r1/independent-acceptance.stdout.log",
+      "sha256": "18c93b1938010a7a63744d4bc7d6ace4f5843c6119d3d7f284456dad146f6d0e"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\repairs-126-1730-1743-and-seven-20261114-r1\\seven\\evaluation\\uf-20261112-sec-attribute-policy\\verification\\acceptance-r1\\independent-results.xml",
+      "path": "verification/acceptance-r1/independent-results.xml",
+      "sha256": "7393e3a42be49fbc8f4f47d87ef0bd1266f1341df9fe4e9f28506dd9d24310ae"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\repairs-126-1730-1743-and-seven-20261114-r1\\seven\\evaluation\\uf-20261112-sec-attribute-policy\\verification\\acceptance-r1\\integration-example.json",
+      "path": "verification/acceptance-r1/integration-example.json",
+      "sha256": "8711a09e29c76726ae2680140881585bd0c437ab6dd9106d8e51e5b450d7e55c"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\repairs-126-1730-1743-and-seven-20261114-r1\\seven\\evaluation\\uf-20261112-sec-attribute-policy\\verification\\acceptance-r1\\integration-example.stderr.log",
+      "path": "verification/acceptance-r1/integration-example.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\repairs-126-1730-1743-and-seven-20261114-r1\\seven\\evaluation\\uf-20261112-sec-attribute-policy\\verification\\acceptance-r1\\integration-example.stdout.log",
+      "path": "verification/acceptance-r1/integration-example.stdout.log",
+      "sha256": "82e8a205860f5d053f3590816ecc1ff1dd0baa67af0a1e66cc7056d61a416f0a"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\repairs-126-1730-1743-and-seven-20261114-r1\\seven\\evaluation\\uf-20261112-sec-attribute-policy\\verification\\acceptance-r1\\replay-proof.json",
+      "path": "verification/acceptance-r1/replay-proof.json",
+      "sha256": "90e5130368f9b35485733e8a7f5b0069beb6ce6aea5c37c2dcb5aafd7fbff4f6"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\repairs-126-1730-1743-and-seven-20261114-r1\\seven\\evaluation\\uf-20261112-sec-attribute-policy\\verification\\acceptance-r1\\reproduction-notes.md",
+      "path": "verification/acceptance-r1/reproduction-notes.md",
+      "sha256": "05ebdc23e41114e1e57b73c8a2d074a449cf7244f65de55dba5514332be15a24"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\repairs-126-1730-1743-and-seven-20261114-r1\\seven\\evaluation\\uf-20261112-sec-attribute-policy\\verification\\acceptance-r1\\reviewed-spec.json",
+      "path": "verification/acceptance-r1/reviewed-spec.json",
+      "sha256": "b1d4ff738d04d5395008a0e0b4359c4d43d71d7286003b0f26b0a6f2b5b76ab1"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\repairs-126-1730-1743-and-seven-20261114-r1\\seven\\evaluation\\uf-20261112-sec-attribute-policy\\verification\\acceptance-r1\\test_attribute_policy_review.py",
+      "path": "verification/acceptance-r1/test_attribute_policy_review.py",
+      "sha256": "1880a198958888a2f05d730f19a460380322e2243ff1e3728e323c8552caf308"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\repairs-126-1730-1743-and-seven-20261114-r1\\seven\\evaluation\\uf-20261112-sec-attribute-policy\\verification\\acceptance-r1\\upstream-full.json",
+      "path": "verification/acceptance-r1/upstream-full.json",
+      "sha256": "a64dbc303a902dca1319d68a2bc5c3f5c2ba8b8812b1d17f649add651957fad5"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\repairs-126-1730-1743-and-seven-20261114-r1\\seven\\evaluation\\uf-20261112-sec-attribute-policy\\verification\\acceptance-r1\\upstream-full.stderr.log",
+      "path": "verification/acceptance-r1/upstream-full.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\repairs-126-1730-1743-and-seven-20261114-r1\\seven\\evaluation\\uf-20261112-sec-attribute-policy\\verification\\acceptance-r1\\upstream-full.stdout.log",
+      "path": "verification/acceptance-r1/upstream-full.stdout.log",
+      "sha256": "a7741e6114a35b4513f9083e4ff860b472a0f9bfb451b8b4ae8a3198a7af7e3b"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\repairs-126-1730-1743-and-seven-20261114-r1\\seven\\evaluation\\uf-20261112-sec-attribute-policy\\verification\\acceptance-r1\\upstream-results.xml",
+      "path": "verification/acceptance-r1/upstream-results.xml",
+      "sha256": "d14e0a10874c2d4a81d600321cb555aebec7cea2a3842d91f885d60f50ebad67"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\repairs-126-1730-1743-and-seven-20261114-r1\\seven\\evaluation\\uf-20261112-sec-attribute-policy\\verification\\recorded-runtime-r1\\access-checks-output.log",
+      "path": "verification/recorded-runtime-r1/access-checks-output.log",
+      "sha256": "31e010f16c2218e78207e0dcb47e8db74c1ca12f01e291aa7c64de3f69beedc8"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\repairs-126-1730-1743-and-seven-20261114-r1\\seven\\evaluation\\uf-20261112-sec-attribute-policy\\verification\\recorded-runtime-r1\\actual-commands.json",
+      "path": "verification/recorded-runtime-r1/actual-commands.json",
+      "sha256": "a2ca4ad58db882f5355f0085efab8aca4620d99152793962f12267a5e2597fb6"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\repairs-126-1730-1743-and-seven-20261114-r1\\seven\\evaluation\\uf-20261112-sec-attribute-policy\\verification\\recorded-runtime-r1\\example-output.log",
+      "path": "verification/recorded-runtime-r1/example-output.log",
+      "sha256": "82e8a205860f5d053f3590816ecc1ff1dd0baa67af0a1e66cc7056d61a416f0a"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\repairs-126-1730-1743-and-seven-20261114-r1\\seven\\evaluation\\uf-20261112-sec-attribute-policy\\verification\\recorded-runtime-r1\\sandbox-tests-output.log",
+      "path": "verification/recorded-runtime-r1/sandbox-tests-output.log",
+      "sha256": "268707c7c04fefed86374af0e356fbe732a2e27c646effa0bc24afa46b8d7308"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\repairs-126-1730-1743-and-seven-20261114-r1\\seven\\evaluation\\uf-20261112-sec-attribute-policy\\verification\\recorded-runtime-r1\\spec.json",
+      "path": "verification/recorded-runtime-r1/spec.json",
+      "sha256": "99a6a9f85399a88113568ca0cf07a4bf5088c809b28511f12dd95f9133b1695d"
+    }
+  ],
+  "reproduction_readme": "Jinja sandbox attribute policy: independent frozen-source replay. Python 3.14.3 on Windows. See dependency-lock.stdout.log, exact commands, raw outputs, pytest XML and test_attribute_policy_review.py. Use PYTHONPATH=src. No services required. Original model source is unchanged; these checks were authored and executed after the single model session.",
+  "no_model_source_edits": true,
+  "native_trace_included": false
+}

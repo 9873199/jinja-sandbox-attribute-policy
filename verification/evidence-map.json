@@ -1,0 +1,52 @@
+{
+  "process": [
+    {
+      "native_lines": [
+        123,
+        124,
+        268,
+        269,
+        281,
+        282,
+        290,
+        291,
+        340,
+        341,
+        362,
+        363
+      ],
+      "fact": "Original security tests, counted denied access, mutation check and full suite; no private reasoning used."
+    }
+  ],
+  "requirements": [
+    {
+      "files": [
+        "src/jinja2/sandbox.py",
+        "src/jinja2/filters.py"
+      ],
+      "facts": "Pre-name hook returns unsafe undefined before target getattr; item key precedence retained; direct denied attribute never falls back to key."
+    },
+    {
+      "files": [
+        "tests/test_security.py",
+        "attribute_policy_demo.py",
+        "docs/sandbox.rst"
+      ],
+      "facts": "Counters, named paths, ordinary environment, async and integration example covered."
+    }
+  ],
+  "independent_evidence": [
+    "verification/acceptance-r1/independent-acceptance.json",
+    "verification/acceptance-r1/upstream-full.json",
+    "verification/acceptance-r1/integration-example.json"
+  ],
+  "excluded_errors": [
+    "Missing native ruff/mypy is not product failure.",
+    "Chaining unsafe undefined raises existing SecurityError; baseline-equivalent, not a new defect."
+  ],
+  "time": "2026-11-14T12:18:56+08:00",
+  "uid": 1738,
+  "frozen_commit": "f7886fee45613b3214eda6fb1c05c96eb9827e35",
+  "native_trace_sha256": "708d7bd3deabf8a6b5afcec857d138cedf27b55ec0a98cfef32e061c3ed8c828",
+  "no_model_source_changes_after_freeze": true
+}

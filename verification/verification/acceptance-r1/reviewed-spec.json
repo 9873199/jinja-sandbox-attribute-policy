@@ -1,0 +1,61 @@
+{
+  "uid": 1738,
+  "run_id": "uf-20261112-sec-attribute-policy",
+  "revision": "acceptance-r1",
+  "reviewed": true,
+  "reviewer": "Codex primary reviewer, AI-assisted",
+  "frozen_trace_sha256": "708d7bd3deabf8a6b5afcec857d138cedf27b55ec0a98cfef32e061c3ed8c828",
+  "product_modules": [
+    "jinja2",
+    "jinja2.sandbox",
+    "jinja2.filters"
+  ],
+  "support_files": [
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\resume-seven-20261114-r2\\test_attribute_policy_review.py",
+      "path": "test_attribute_policy_review.py",
+      "sha256": "1880a198958888a2f05d730f19a460380322e2243ff1e3728e323c8552caf308"
+    }
+  ],
+  "commands": [
+    {
+      "name": "independent-acceptance",
+      "argv": [
+        "{python}",
+        "-B",
+        "-m",
+        "pytest",
+        "{verification}/test_attribute_policy_review.py",
+        "--confcutdir={verification}",
+        "-q",
+        "--tb=short",
+        "-p",
+        "no:cacheprovider",
+        "--junitxml={verification}/independent-results.xml"
+      ]
+    },
+    {
+      "name": "upstream-full",
+      "argv": [
+        "{python}",
+        "-B",
+        "-m",
+        "pytest",
+        "tests",
+        "-q",
+        "--tb=short",
+        "-p",
+        "no:cacheprovider",
+        "--junitxml={verification}/upstream-results.xml"
+      ]
+    },
+    {
+      "name": "integration-example",
+      "argv": [
+        "{python}",
+        "-B",
+        "attribute_policy_demo.py"
+      ]
+    }
+  ]
+}

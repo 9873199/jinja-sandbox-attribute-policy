@@ -1,0 +1,22 @@
+== denied attribute via dot access ==
+''
+== denied attribute via subscription fallback ==
+''
+== denied attribute via the attr filter ==
+''
+== denied attribute via map / selectattr ==
+'[Undefined]'
+'0'
+== denied attribute via str.format / format_map ==
+''
+''
+== same-name dict key is still reachable as an item ==
+'business-data-key'
+''
+== allowed attributes keep working ==
+'ada'
+== StrictUndefined turns the denial into a SecurityError ==
+SecurityError: access to attribute 'secret' of 'UserRecord' object is unsafe.
+== side-effect ledger (must stay empty) ==
+[]
+OK: no query ran, no audit row written.

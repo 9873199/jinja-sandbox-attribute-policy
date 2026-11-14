@@ -1,0 +1,49 @@
+完成。所有改动都在 `D:\hc\userFeedback\cache\repairs-126-1730-1743-and-seven-20261114-r1\seven\sources\attribute-policy` 内，未提交、未推送。
+
+## 核心改动
+
+**1. 新钩子 `is_safe_attribute_name(obj, attr)`（`src/jinja2/sandbox.py`）** — 默认返回 `True`，完全向后兼容。返回 `False` 时在任何取值动作之前直接走 `unsafe_undefined`：
+
+- `getattr`：方法入口第一行检查，拒绝后既不 `getattr`，也不回退 `obj[attribute]`。
+- `getitem`：先 `obj[argument]` 按键取（字典业务 key 原样命中、不受影响）；只有键查找抛 `TypeError/LookupError` 进入属性回退时，才在 `getattr` 之前检查名字。
+- 原 `is_safe_attribute(obj, attr, value)` 原样保留，仍负责取值后的私有属性 / 内部属性 / `ImmutableSandboxedEnvironment` 可变方法限制，两道检查相互独立。
+
+**2. `attr` 过滤器（`src/jinja2/filters.py`）** — 在 `getattr_static` / `hasattr` 预探测之前先问钩子（用 `getattr(environment, "is_safe_attribute_name", None)` 鸭子判断，普通 `Environment` 没有此方法，行为不变）。被拒绝时直接返回 `unsafe_undefined`，预探测不会触发 `__getattr__`。
+
+**3. 其余入口无需额外改动即可覆盖**，因为它们都汇聚到上述两个方法：
+- `map/selectattr/rejectattr` → `make_attrgetter` → `environment.getitem`
+- `str.format` / `format_map` → `SandboxedFormatter.get_field` → `env.getattr/getitem`
+- 编译后的点号 / 下标、`nodes.as_const` 常量折叠、async 模板（`auto_await` 包裹同一调用）同理。
+
+关键语义：`d['secret']` 仍按键访问正常返回；`d.secret` 一旦被明确拒绝，返回空 undefined，**不会**再回退到同名键 `d['secret']` 绕过。
+
+## 测试结果
+
+`tests/test_security.py` 新增 30 个回归测试（含 asyncio/trio 两套异步后端），用带计数器、一触即抛的 property（数据描述符）、非数据描述符、`__getattr__`、`__getattribute__` 做探针：
+
+```
+941 passed in 10.24s          # 全量
+47 passed                     # test_security.py（原 17 + 新 30）
+```
+
+做了变异验证：临时还原 `sandbox.py`/`filters.py` 只留新测试，**19 个测试失败**（property/descriptor/`__getattr__` 计数 >0 或抛 RuntimeError），恢复后全部通过，证明确实拦住了取值动作。测试还覆盖：允许的属性与字典键正常、普通 undefined 与 `StrictUndefined`（拒绝后用即抛 `SecurityError`）行为不变、普通 `Environment` 无此钩子且行为不变、后置 `is_safe_attribute` 仍能独立拒绝。
+
+## 子类接入示例
+
+`attribute_policy_demo.py` 是可直接运行的完整示例（`python attribute_policy_demo.py`），核心就是：
+
+```python
+class TemplateServiceEnvironment(SandboxedEnvironment):
+    def is_safe_attribute_name(self, obj, attr):
+        return attr not in DENIED_ATTRIBUTE_NAMES
+```
+
+演示覆盖点号、下标回退、`attr`、`map/selectattr`、`format/format_map`、同名键不被误伤、`StrictUndefined` 抛 `SecurityError`，结尾断言审计台账为空：
+
+```
+== side-effect ledger (must stay empty) ==
+[]
+OK: no query ran, no audit row written.
+```
+
+文档（`docs/sandbox.rst`，含 autoclass 成员列表）和 `CHANGES.rst` 已同步。另注意一个与改动前一致的既有语义：在拒绝返回的 unsafe undefined 上继续链式取属性（如 `obj.secret.foo`）会抛 `SecurityError`，默认 sandbox 对 `__class__` 的处理本来就是这样，单独渲染拒绝属性仍是空字符串。

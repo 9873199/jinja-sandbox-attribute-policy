@@ -1,0 +1,16 @@
+{
+  "independent": {
+    "passed": 24,
+    "failed": 0,
+    "command": "D:\\hc\\userFeedback\\cache\\repairs-126-1730-1743-and-seven-20261114-r1\\seven\\evaluation\\uf-20261112-sec-attribute-policy\\verification\\acceptance-r1\\independent-acceptance.json"
+  },
+  "upstream_full": {
+    "passed": 941,
+    "failed": 0,
+    "command": "D:\\hc\\userFeedback\\cache\\repairs-126-1730-1743-and-seven-20261114-r1\\seven\\evaluation\\uf-20261112-sec-attribute-policy\\verification\\acceptance-r1\\upstream-full.json"
+  },
+  "example": {
+    "exit_code": 0,
+    "command": "D:\\hc\\userFeedback\\cache\\repairs-126-1730-1743-and-seven-20261114-r1\\seven\\evaluation\\uf-20261112-sec-attribute-policy\\verification\\acceptance-r1\\integration-example.json"
+  }
+}

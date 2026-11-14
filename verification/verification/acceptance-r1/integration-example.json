@@ -1,0 +1,12 @@
+{
+  "time": "2026-11-14T12:10:38+08:00",
+  "argv": [
+    "D:\\hc\\userFeedback\\cache\\repairs-126-1730-1743-and-seven-20261114-r1\\seven\\tasks\\attribute-policy\\env\\Scripts\\python.exe",
+    "-B",
+    "attribute_policy_demo.py"
+  ],
+  "cwd": "D:\\hc\\userFeedback\\cache\\repairs-126-1730-1743-and-seven-20261114-r1\\seven\\evaluation\\uf-20261112-sec-attribute-policy\\verification\\acceptance-r1\\replay-source",
+  "exit_code": 0,
+  "stdout_log": "D:\\hc\\userFeedback\\cache\\repairs-126-1730-1743-and-seven-20261114-r1\\seven\\evaluation\\uf-20261112-sec-attribute-policy\\verification\\acceptance-r1\\integration-example.stdout.log",
+  "stderr_log": "D:\\hc\\userFeedback\\cache\\repairs-126-1730-1743-and-seven-20261114-r1\\seven\\evaluation\\uf-20261112-sec-attribute-policy\\verification\\acceptance-r1\\integration-example.stderr.log"
+}

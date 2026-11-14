@@ -1,0 +1,64 @@
+{
+  "title": "Template access controls",
+  "directory": "D:\\hc\\userFeedback\\cache\\repairs-126-1730-1743-and-seven-20261114-r1\\seven\\evaluation\\uf-20261112-sec-attribute-policy\\recording\\r1",
+  "cwd": "D:\\hc\\userFeedback\\cache\\repairs-126-1730-1743-and-seven-20261114-r1\\seven\\evaluation\\uf-20261112-sec-attribute-policy\\verification\\acceptance-r1\\replay-source",
+  "capture": "wgc",
+  "console_start_delay_seconds": 15,
+  "environment": {
+    "PYTHONPATH": "D:\\hc\\userFeedback\\cache\\repairs-126-1730-1743-and-seven-20261114-r1\\seven\\evaluation\\uf-20261112-sec-attribute-policy\\verification\\acceptance-r1\\replay-source\\src;D:\\hc\\userFeedback\\cache\\repairs-126-1730-1743-and-seven-20261114-r1\\seven\\evaluation\\uf-20261112-sec-attribute-policy\\verification\\acceptance-r1",
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "PYTHONUTF8": "1"
+  },
+  "commands": [
+    {
+      "id": "example",
+      "label": "Template service access example",
+      "display": "python attribute_policy_demo.py",
+      "argv": [
+        "D:\\hc\\userFeedback\\cache\\repairs-126-1730-1743-and-seven-20261114-r1\\seven\\tasks\\attribute-policy\\env\\Scripts\\python.exe",
+        "-B",
+        "attribute_policy_demo.py"
+      ],
+      "start_at_seconds": 0
+    },
+    {
+      "id": "access-checks",
+      "label": "Attribute paths, key access and side effect checks",
+      "display": "python -m pytest checks/test_attribute_policy_review.py -q",
+      "argv": [
+        "D:\\hc\\userFeedback\\cache\\repairs-126-1730-1743-and-seven-20261114-r1\\seven\\tasks\\attribute-policy\\env\\Scripts\\python.exe",
+        "-B",
+        "-m",
+        "pytest",
+        "D:\\hc\\userFeedback\\cache\\repairs-126-1730-1743-and-seven-20261114-r1\\seven\\evaluation\\uf-20261112-sec-attribute-policy\\verification\\acceptance-r1\\test_attribute_policy_review.py",
+        "--confcutdir=D:\\hc\\userFeedback\\cache\\repairs-126-1730-1743-and-seven-20261114-r1\\seven\\evaluation\\uf-20261112-sec-attribute-policy\\verification\\acceptance-r1",
+        "-q",
+        "--tb=no",
+        "--show-capture=no",
+        "--disable-warnings",
+        "-p",
+        "no:cacheprovider"
+      ],
+      "start_at_seconds": 25
+    },
+    {
+      "id": "sandbox-tests",
+      "label": "Sandbox compatibility and async checks",
+      "display": "python -m pytest tests/test_security.py -q",
+      "argv": [
+        "D:\\hc\\userFeedback\\cache\\repairs-126-1730-1743-and-seven-20261114-r1\\seven\\tasks\\attribute-policy\\env\\Scripts\\python.exe",
+        "-B",
+        "-m",
+        "pytest",
+        "tests/test_security.py",
+        "-q",
+        "--tb=no",
+        "--show-capture=no",
+        "--disable-warnings",
+        "-p",
+        "no:cacheprovider"
+      ],
+      "start_at_seconds": 50
+    }
+  ]
+}

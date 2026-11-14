@@ -51,6 +51,16 @@ prevent calling them from templates when passing objects as data. Use
 :class:`ImmutableSandboxedEnvironment` to prevent modifying lists and
 dictionaries.
 
+Accessing an attribute can itself have side effects: reading a property
+or data descriptor runs its code, and a dynamic ``__getattr__`` may run
+a query or write an audit record. Override
+:meth:`~SandboxedEnvironment.is_safe_attribute_name` to reject an
+attribute *name* before any value is fetched. A rejected name resolves
+to an unsafe undefined without invoking the descriptor, property or
+``__getattr__``, and without falling back to an item of the same name.
+Items looked up through subscription (``obj["name"]``) are not affected,
+so dictionary keys remain accessible as keys.
+
 
 API
 ---
@@ -58,9 +68,9 @@ API
 .. module:: jinja2.sandbox
 
 .. autoclass:: SandboxedEnvironment([options])
-    :members: is_safe_attribute, is_safe_callable, default_binop_table,
-              default_unop_table, intercepted_binops, intercepted_unops,
-              call_binop, call_unop
+    :members: is_safe_attribute_name, is_safe_attribute, is_safe_callable,
+              default_binop_table, default_unop_table, intercepted_binops,
+              intercepted_unops, call_binop, call_unop
 
 .. autoclass:: ImmutableSandboxedEnvironment([options])
 

@@ -245,6 +245,26 @@ class SandboxedEnvironment(Environment):
         self.binop_table = self.default_binop_table.copy()
         self.unop_table = self.default_unop_table.copy()
 
+    def is_safe_attribute_name(self, obj: t.Any, attr: str) -> bool:
+        """Check whether accessing the attribute named *attr* on *obj* is
+        allowed before any value is fetched.  This runs before
+        :func:`getattr`, so a descriptor or property is never invoked, and
+        ``__getattr__`` / ``__getattribute__`` are never triggered for a
+        rejected name.
+
+        Per default every attribute name is allowed.  Subclasses may override
+        this to deny access to attributes whose lookup itself has side
+        effects, such as properties that run queries or write audit records.
+        Returning ``False`` makes :meth:`getattr` and :meth:`getitem` return
+        :meth:`unsafe_undefined` without fetching the attribute or falling
+        back to an item of the same name.  Only direct attribute requests are
+        checked; items looked up through subscription are not, so dict keys
+        that happen to share a denied name remain accessible as items.
+
+        .. versionadded:: 3.2
+        """
+        return True
+
     def is_safe_attribute(self, obj: t.Any, attr: str, value: t.Any) -> bool:
         """The sandboxed environment will call this method to check if the
         attribute of an object is safe to access.  Per default all attributes
@@ -296,6 +316,11 @@ class SandboxedEnvironment(Environment):
                 except Exception:
                     pass
                 else:
+                    # Check the name before getattr so that denying it never
+                    # invokes a descriptor, property or __getattr__.
+                    if not self.is_safe_attribute_name(obj, attr):
+                        return self.unsafe_undefined(obj, attr)
+
                     try:
                         value = getattr(obj, attr)
                     except AttributeError:
@@ -313,6 +338,11 @@ class SandboxedEnvironment(Environment):
         """Subscribe an object from sandboxed code and prefer the
         attribute.  The attribute passed *must* be a bytestring.
         """
+        # Check the name first so a denied attribute never runs a descriptor,
+        # property or __getattr__, and never falls back to obj[attribute].
+        if not self.is_safe_attribute_name(obj, attribute):
+            return self.unsafe_undefined(obj, attribute)
+
         try:
             value = getattr(obj, attribute)
         except AttributeError:

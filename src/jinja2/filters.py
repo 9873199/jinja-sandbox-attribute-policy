@@ -1412,6 +1412,18 @@ def do_attr(environment: "Environment", obj: t.Any, name: str) -> Undefined | t.
 
     See :ref:`Notes on subscriptions <notes-on-subscriptions>` for more details.
     """
+    # A sandbox may deny an attribute name before any lookup happens. Honor
+    # that here too, so neither the existence probes below nor the final
+    # getattr trigger descriptors or __getattr__ for a denied attribute.
+    is_safe_attribute_name = getattr(
+        environment, "is_safe_attribute_name", None
+    )
+
+    if is_safe_attribute_name is not None and not is_safe_attribute_name(obj, name):
+        return t.cast(
+            "SandboxedEnvironment", environment
+        ).unsafe_undefined(obj, name)
+
     # Environment.getattr will fall back to obj[name] if obj.name doesn't exist.
     # But we want to call env.getattr to get behavior such as sandboxing.
     # Determine if the attr exists first, so we know the fallback won't trigger.

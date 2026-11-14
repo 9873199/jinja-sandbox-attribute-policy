@@ -13,6 +13,12 @@ Unreleased
 -   Use modern packaging metadata with ``pyproject.toml`` instead of ``setup.cfg``.
     :pr:`1793`
 -   Use ``flit_core`` instead of ``setuptools`` as build backend.
+-   Add ``SandboxedEnvironment.is_safe_attribute_name``, a hook that is
+    called before fetching an attribute value. When it returns ``False``,
+    attribute access resolves to an unsafe undefined without invoking a
+    property, descriptor or ``__getattr__``, and without falling back to an
+    item of the same name. The existing post-fetch ``is_safe_attribute``
+    checks are unchanged.
 
 
 Version 3.1.6
